@@ -1,14 +1,14 @@
 let userScore = 0;
 let aiScore = 0;
 
-function computerPlay() {
+const computerPlay = () => {
   const options = ["rock", "paper", "scissors"];
 
   const random = Math.floor(Math.random() * options.length);
   return options[random];
-}
+};
 
-function playRound(playerSelection, computerSelection) {
+const playRound = (playerSelection, computerSelection) => {
   let result;
   switch (true) {
     case playerSelection === "rock" && computerSelection === "rock":
@@ -57,21 +57,21 @@ function playRound(playerSelection, computerSelection) {
       result = `Please enter "Rock", "Paper", or "Scissors"`;
   }
   return result;
-}
+};
 
-function game() {
+const game = () => {
   let playerSelect = window.prompt(`Rock, Paper, or Scissors?`).toLowerCase();
   let computerSelect = computerPlay();
 
   console.log(playRound(playerSelect, computerSelect));
   console.log(`Your score is ${userScore}`);
   console.log(`AI score is ${aiScore}`);
-}
+};
 
-function gameLoop() {
+const gameLoop = () => {
   for (i = 0; i < 5; i++) {
     game();
   }
-}
+};
 
 gameLoop();
