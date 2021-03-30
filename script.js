@@ -9,48 +9,60 @@ function computerPlay() {
 }
 
 function playRound(playerSelection, computerSelection) {
+  let result;
   switch (true) {
     case playerSelection === "rock" && computerSelection === "rock":
-      return `It's a tie!`;
+      result = `It's a tie!`;
+      break;
 
     case playerSelection === "rock" && computerSelection === "paper":
       aiScore++;
-      return `Paper beats Rock. AI wins!`;
+      result = `Paper beats Rock. AI wins!`;
+      break;
 
     case playerSelection === "rock" && computerSelection === "scissors":
       userScore++;
-      return `Rock beats Scissors. You win!`;
+      result = `Rock beats Scissors. You win!`;
+      break;
 
     case playerSelection === "paper" && computerSelection === "paper":
-      return `It's a tie!`;
+      result = `It's a tie!`;
+      break;
 
     case playerSelection === "paper" && computerSelection === "scissors":
       aiScore++;
-      return `Scissors beats paper. AI wins!`;
+      result = `Scissors beats paper. AI wins!`;
+      break;
 
     case playerSelection === "paper" && computerSelection === "rock":
       userScore++;
-      return `Paper beats Rock. You win!`;
+      result = `Paper beats Rock. You win!`;
+      break;
 
     case playerSelection === "scissors" && computerSelection === "scissors":
-      return `It's a tie!`;
+      result = `It's a tie!`;
+      break;
 
     case playerSelection === "scissors" && computerSelection === "rock":
       aiScore++;
-      return `Rock beats Scissors. AI wins!`;
+      result = `Rock beats Scissors. AI wins!`;
+      break;
 
     case playerSelection === "scissors" && computerSelection === "paper":
       userScore++;
-      return `Scissors beats Paper. You win!`;
+      result = `Scissors beats Paper. You win!`;
+      break;
 
     default:
-      return `Please enter "Rock", "Paper", or "Scissors"`;
+      result = `Please enter "Rock", "Paper", or "Scissors"`;
   }
+  return result;
 }
 
 function game() {
   let playerSelect = window.prompt(`Rock, Paper, or Scissors?`).toLowerCase();
   let computerSelect = computerPlay();
+
   console.log(playRound(playerSelect, computerSelect));
   console.log(`Your score is ${userScore}`);
   console.log(`AI score is ${aiScore}`);
