@@ -10,6 +10,7 @@ const computerPlay = () => {
 
 const playRound = (playerSelection, computerSelection) => {
   let result;
+
   switch (true) {
     case playerSelection === "rock" && computerSelection === "rock":
       result = `It's a tie!`;
@@ -56,6 +57,7 @@ const playRound = (playerSelection, computerSelection) => {
     default:
       result = `Please enter "Rock", "Paper", or "Scissors"`;
   }
+
   return result;
 };
 
