@@ -1,6 +1,8 @@
+// To keep track of the score
 let userScore = 0;
 let aiScore = 0;
 
+// To get computer to play and return result
 const computerPlay = () => {
   const options = ["rock", "paper", "scissors"];
 
@@ -8,6 +10,7 @@ const computerPlay = () => {
   return options[random];
 };
 
+// To play a single round of RPS and return result
 const playRound = (playerSelection, computerSelection) => {
   let result;
 
@@ -61,6 +64,7 @@ const playRound = (playerSelection, computerSelection) => {
   return result;
 };
 
+// To get player choice and console.log the current score
 const game = () => {
   let playerSelect = window.prompt(`Rock, Paper, or Scissors?`).toLowerCase();
   let computerSelect = computerPlay();
@@ -70,10 +74,12 @@ const game = () => {
   console.log(`AI score is ${aiScore}`);
 };
 
+// To play 5 rounds of RPS
 const gameLoop = () => {
   for (i = 0; i < 5; i++) {
     game();
   }
 };
 
+// To call gameLoop function
 gameLoop();
